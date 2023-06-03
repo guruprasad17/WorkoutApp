@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <ImageView
+        android:id="@+id/wishListItemImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="image"
+        tools:src="@drawable/product_1"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/wishListItemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toEndOf="@id/wishListItemImage"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name" />
+
+
+    <Button
+        android:id="@+id/wishlistItemRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toEndOf="@id/wishListItemImage"
+        app:layout_constraintTop_toBottomOf="@id/wishListItemName"
+        android:text="remove" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
