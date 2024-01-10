@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import io.branch.referral.util.BRANCH_STANDARD_EVENT
+import io.branch.referral.util.BranchEvent
+import io.branch.referral.util.CurrencyType
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 import myapplication.WorkoutApp.databinding.ActivityCartBinding
@@ -32,6 +35,21 @@ class CartActivity : AppCompatActivity(), CartItemDisplayAdapter.OnClickListener
         val dao = (application as WorkOutApp).db!!.CartDao()
         displayCartItems(dao)
 
+        binding?.buyButton?.setOnClickListener {
+            BranchEvent(BRANCH_STANDARD_EVENT.PURCHASE)
+                .setCurrency(CurrencyType.INR)
+                .setDescription("Customer added item to cart")
+                .setShipping(0.0)
+                .setTax(18.0)
+                .setRevenue(mtotal.toDouble())
+                .addCustomDataProperty("user-id", "Custom_Event_Property_val1")
+                .logEvent(applicationContext)
+
+               lifecycleScope.launch {
+                   dao.deleteAllItems()
+               }
+
+        }
     }
 
     fun displayCartItems(cartDao: CartDao) {
@@ -50,12 +68,12 @@ class CartActivity : AppCompatActivity(), CartItemDisplayAdapter.OnClickListener
                     // History adapter is initialized and the list is passed in the param.
                     for (item in list) {
 
-                        Log.e("items", "${item.price}")
+                        Log.e("items", "${item.image}")
                         mtotal += (item.price * item.quantity)
 
                     }
                     Log.e("inside recycler", "abkdakd")
-                    cartItemAdapter = CartItemDisplayAdapter(list)
+                    cartItemAdapter = CartItemDisplayAdapter(list, applicationContext)
                     binding?.cartListStatus?.layoutManager =
                         LinearLayoutManager(this@CartActivity, LinearLayoutManager.VERTICAL, false)
                     binding?.priceAmount?.text = mtotal.toString()

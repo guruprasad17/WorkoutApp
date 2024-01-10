@@ -3,11 +3,13 @@ package myapplication.WorkoutApp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.appbar.MaterialToolbar
+import io.branch.referral.util.BRANCH_STANDARD_EVENT
+import io.branch.referral.util.BranchEvent
+import io.branch.referral.util.CurrencyType
+
 import myapplication.WorkoutApp.databinding.ActivityProductsListBinding
 import java.util.*
 
@@ -16,11 +18,12 @@ class ProductsList : AppCompatActivity() {
     private var binding: ActivityProductsListBinding? = null
     private var productsAdapter: ProductsDisplayAdapter? = null
     private var productsList: ArrayList<ProductModel>? = null
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProductsListBinding.inflate(layoutInflater)
-
+        sessionManager = SessionManager(this)
         setContentView(binding?.root)
         val toolbar = binding?.appBar
         setSupportActionBar(toolbar)
@@ -46,7 +49,17 @@ class ProductsList : AppCompatActivity() {
         productsAdapter!!.setOnClickListener(object :
             ProductsDisplayAdapter.OnClickListener {
             override fun onClick(position: ProductModel) {
-                Log.i("navigate", "id:$position")
+
+                BranchEvent(BRANCH_STANDARD_EVENT.VIEW_ITEM)
+                    .setCurrency(CurrencyType.INR)
+                    .setDescription(position.getName())
+                    .setShipping(0.0)
+                    .setTax(18.0)
+                    .setRevenue(position.getPrice().toDouble())
+                    .setSearchQuery("Test Search query")
+                    .addCustomDataProperty("user-id", sessionManager.getUserId().toString())
+                    .logEvent(applicationContext)
+
                 val intent = Intent(this@ProductsList, ProductDetail::class.java)
                 intent.putExtra("prod", position)
                 startActivity(intent)
@@ -73,6 +86,9 @@ class ProductsList : AppCompatActivity() {
             }
             R.id.cart -> {
                 // Start Activity 2
+                BranchEvent(BRANCH_STANDARD_EVENT.VIEW_CART)
+                    .addCustomDataProperty("user-id", sessionManager.getUserId().toString())
+                    .logEvent(applicationContext)
                 val intent = Intent(this, CartActivity::class.java)
                 startActivity(intent)
                 return true

@@ -170,8 +170,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             override fun onFinish() {
 
-
-
                 if (currentExercisePosition < exerciseList?.size!! - 1) {
                     exerciseList!![currentExercisePosition].setIsSelected(false) // exercise is completed so selection is set to false
                     exerciseList!![currentExercisePosition].setIsCompleted(true) // updating in the list that this exercise is completed
@@ -237,8 +235,9 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         customDialog.setCanceledOnTouchOutside(false)
         dialogBinding.tvYes.setOnClickListener {
 
-            this@ExerciseActivity.finish()
+
             customDialog.dismiss()
+            finish()
         }
         dialogBinding.tvNo.setOnClickListener {
             customDialog.dismiss()

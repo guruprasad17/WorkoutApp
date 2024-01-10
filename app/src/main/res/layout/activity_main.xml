@@ -6,8 +6,19 @@
     android:layout_height="match_parent"
     android:padding="5dp"
     tools:context=".MainActivity">
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:contentDescription="logout"
+        android:src="@drawable/ic_log_out"
+        app:layout_constraintBottom_toTopOf="@id/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:contentDescription="logo"
@@ -93,6 +104,7 @@
     <!-- Todo 4 position the history text below the history frame layout and center
     -->
     <TextView
+        android:id="@+id/historyText"
         app:layout_constraintTop_toBottomOf="@id/flHistory"
         app:layout_constraintStart_toStartOf="@id/flHistory"
         app:layout_constraintEnd_toEndOf="@id/flHistory"
@@ -137,5 +149,15 @@
         android:textColor="@color/colorAccent"
         android:textSize="22sp"
         android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/appShareButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/historyText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_share"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

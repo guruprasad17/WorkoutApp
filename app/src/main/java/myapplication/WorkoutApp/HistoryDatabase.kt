@@ -5,12 +5,13 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import android.content.Context
 
-@Database(entities = [HistoryEntity::class, CartEntity::class, WishListEntity::class], version = 3)
+@Database(entities = [HistoryEntity::class, CartEntity::class, WishListEntity::class, UsersEntity::class], version = 5)
 abstract class HistoryDatabase : RoomDatabase() {
 
     abstract fun historyDao(): HistoryDao
     abstract fun CartDao(): CartDao
     abstract fun WishListDao() : WishListDao
+    abstract fun UsersDao() : UsersDao
 
     companion object {
         private var INSTANCE: HistoryDatabase? = null

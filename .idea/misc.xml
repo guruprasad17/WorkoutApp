@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/drawable/circular_progress_bar.xml" value="0.1" />
+        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/drawable/circular_progress_bar.xml" value="0.23541666666666666" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/drawable/circular_progress_gray.xml" value="0.1" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/drawable/drawable_radio_group_tab_background.xml" value="0.1984375" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/drawable/drawable_units_tab_selector.xml" value="0.1984375" />
@@ -19,14 +19,17 @@
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/drawable/radio_group_tab_background.xml" value="0.1984375" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_bmi.xml" value="0.234375" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_bmiactivity.xml" value="0.234375" />
-        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_cart.xml" value="0.12864583333333332" />
-        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_exercise.xml" value="0.2" />
+        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_cart.xml" value="0.2" />
+        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_exercise.xml" value="0.3685121107266436" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_finish.xml" value="0.17753623188405798" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_history.xml" value="0.23125" />
-        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
+        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_login.xml" value="0.19067028985507245" />
+        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_product_detail.xml" value="0.23097826086956522" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_products_list.xml" value="0.234375" />
+        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_registration.xml" value="0.264" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/activity_wish_list.xml" value="0.14990942028985507" />
+        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/content_login.xml" value="0.19067028985507245" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/dialog_custom_back_confirmation.xml" value="0.17753623188405798" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/item_cart_tile.xml" value="0.23097826086956522" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/item_exercise_status.xml" value="0.234375" />
@@ -34,6 +37,8 @@
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/item_tile.xml" value="0.23097826086956522" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/layout/item_wishlist_tile.xml" value="0.2" />
         <entry key="..\:/androidProjects/workoutApp/app/src/main/res/menu/top_app_bar.xml" value="0.25" />
+        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.25052083333333336" />
+        <entry key="..\:/androidProjects/workoutApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.25052083333333336" />
       </map>
     </option>
   </component>

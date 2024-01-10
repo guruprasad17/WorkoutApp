@@ -1,6 +1,7 @@
 package myapplication.WorkoutApp
 
 import android.app.Application
+import io.branch.referral.Branch
 
 class WorkOutApp: Application() {
 
@@ -15,6 +16,15 @@ class WorkOutApp: Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+
         db = HistoryDatabase.getInstance(this)
+
+
+
+        Branch.enableLogging()
+
+        // Branch object initialization
+        Branch.getAutoInstance(this)
     }
 }

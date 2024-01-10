@@ -47,6 +47,18 @@
             android:textStyle="bold"
             android:layout_marginLeft="3dp"
             />
+        <Button
+            android:id="@+id/buyButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:text="Buy"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_marginLeft="3dp"
+
+            />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

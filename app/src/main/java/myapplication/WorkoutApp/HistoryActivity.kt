@@ -13,6 +13,7 @@ import java.util.*
 class HistoryActivity : AppCompatActivity() {
 
     private var binding: ActivityHistoryBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
